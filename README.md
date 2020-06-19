@@ -1,3 +1,4 @@
+This code is deployed using AWS Amplify: https://sudoku.raunakjodhawat.com/
 ## Available Scripts
 
 In the project directory, you can run:
