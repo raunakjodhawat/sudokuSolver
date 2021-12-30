@@ -13,8 +13,6 @@ export class Board extends React.Component {
 
     constructor(props) {
         super(props);
-        //let initialValues = [0,0,0,1,0,0,2,0,0,8,0,2,0,0,5,0,0,0,0,9,4,0,0,0,0,0,0,2,0,0,3,0,0,0,0,1,0,0,0,0,0,9,7,0,0,4,0,0,0,6,0,0,8,0,0,0,0,2,0,7,0,0,0,0,0,5,9,0,0,0,0,0,0,0,0,6,1,0,0,9,4];
-        //let initialValues = [5, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 4, 0, 0, 6, 0, 0, 1, 8, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 2, 0, 9, 0, 0, 0, 0, 5, 3, 0, 0, 8, 0, 2, 4, 7, 9, 0, 0, 0, 0, 1, 8, 0, 0, 0, 0, 4, 0, 0, 0, 0, 9, 0, 0, 0, 0];
         this.state = {
             values: this.getInitialValue(),
             canLaunch: true,
@@ -62,9 +60,9 @@ export class Board extends React.Component {
                 <Table style={{ width: 550, margin: 100, display: "inline-flex" }} component={Paper}>
                     <TableBody>
                         {
-                            indexes.map((outerValue, outerIndex) => (
+                            indexes.map((_outerValue, outerIndex) => (
                                 <TableRow key={outerIndex}>{
-                                    indexes.map((innerValue, innerIndex) => (
+                                    indexes.map((_innerValue, innerIndex) => (
                                         <TableCell align="center" key={outerIndex * 9 + innerIndex} >
                                             <TextField
                                                 key={outerIndex * 9 + innerIndex}
@@ -85,9 +83,9 @@ export class Board extends React.Component {
                         <Table style={{ width: 550, margin: 100, display: "inline-flex" }} component={Paper}>
                             <TableBody>
                                 {
-                                    indexes.map((outerValue, outerIndex) => (
+                                    indexes.map((_outerValue, outerIndex) => (
                                         <TableRow key={outerIndex}>{
-                                            indexes.map((innerValue, innerIndex) => (
+                                            indexes.map((_innerValue, innerIndex) => (
                                                 <TableCell align="center" key={outerIndex * 9 + innerIndex}>
                                                     <TextField
                                                         key={outerIndex * 9 + innerIndex}
@@ -102,8 +100,8 @@ export class Board extends React.Component {
                                 }
                             </TableBody>
                         </Table>
-                        <Button variant="contained" color="primary" onClick={e => this.onSolveButtonClick()} style={{ width: 600, margin: 10, display: "inline-flex" }}> Solve </Button>
-                        <Button variant="contained" color="primary" onClick={e => this.onClearButtonClick()} style={{ width: 600, margin: 10, display: "inline-flex" }}> Clear </Button>
+                        <Button variant="contained" color="primary" onClick={this.onSolveButtonClick} style={{ width: 600, margin: 10, display: "inline-flex" }}> Solve </Button>
+                        <Button variant="contained" color="primary" onClick={this.onClearButtonClick} style={{ width: 600, margin: 10, display: "inline-flex" }}> Clear </Button>
                     </div> 
                 }
             </div>
